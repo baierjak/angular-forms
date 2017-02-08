@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FORMS</title>
+    
+    <link href="./build/css/style.sass.css?a" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+
+  </head>
+  <body ng-cloak>
+    <nav>
+      <div class="container-fluid">
+        <h3>FORMS</h3>
+      </div>
+    </nav>
+
+    <br><br>
+
+    <div class="container-fluid left-padding">
+        <div ng-controller="formCtrl" class="col-md-3">
+            <form name="myForm" onsubmit="return false;">
+              <div>
+                  <input type="text" placeholder="First name" name="firstName" ng-model="firstName" required="true" />
+                  <span ng-show="myForm.firstName.$dirty && myForm.firstName.$error.required">You must enter a value here</span>
+                  <span ng-show="myForm.firstName.$error.serverMessage">{{myForm.firstName.$error.serverMessage}}</span>
+              </div>
+              <div>
+                  <input type="text" placeholder="Last name" name="lastName" ng-model="lastName"/>
+                  <span ng-show="myForm.lastName.$error.serverMessage">{{myForm.lastName.$error.serverMessage}}</span>
+              </div>
+              <button ng-click="submit()">Submit</button>
+          </form>
+        </div>
+
+        <div ng-controller="formCtrl" class="col-md-3">
+          <form name="form" class="css-form" novalidate>
+            <label>Name:
+              <input type="text" ng-model="user.name" name="uName" required="" />
+            </label>
+            <br />
+            <div ng-show="form.$submitted || form.uName.$touched">
+              <div ng-show="form.uName.$error.required">Tell us your name.</div>
+            </div>
+
+            <label>E-mail:
+              <input type="email" ng-model="user.email" name="uEmail" required="" />
+            </label>
+            <br />
+            <div ng-show="form.$submitted || form.uEmail.$touched">
+              <span ng-show="form.uEmail.$error.required">Tell us your email.</span>
+              <span ng-show="form.uEmail.$error.email">This is not a valid email.</span>
+            </div>
+
+            Gender:
+            <label><input type="radio" ng-model="user.gender" value="male" />male</label>
+            <label><input type="radio" ng-model="user.gender" value="female" />female</label>
+            <br />
+            <label>
+            <input type="checkbox" ng-model="user.agree" name="userAgree" ng-change="agreeChanged()" required="" />
+
+            I agree:
+            </label>
+            <input ng-show="user.agree" type="text" ng-model="user.agreeSign" required="" />
+            <br />
+            <div ng-show="form.$submitted || form.userAgree.$touched">
+              <div ng-show="!user.agree || !user.agreeSign">Please agree and sign.</div>
+            </div>
+
+            <input type="button" ng-click="reset(form)" value="Reset" />
+            <input type="submit" ng-click="update(user)" value="Save" />
+          </form>
+          <br>
+          <pre>user = {{user | json}}</pre>
+          <pre>master = {{master | json}}</pre>
+        </div>
+    </div>  
+
+    <style type="text/css">
+      .css-form input.ng-invalid.ng-touched {
+        background-color: #FA787E;
+      }
+
+      .css-form input.ng-valid.ng-touched {
+        background-color: #78FA89;
+      }
+    </style>
+
+
+  <script type="text/javascript" src="./build/js/vendor.js"></script>
+  <script type="text/javascript" src="./build/js/index.js"></script>
+
+  </body>
+</html>

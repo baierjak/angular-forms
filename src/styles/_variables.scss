@@ -1,0 +1,33 @@
+//@import "~susy";
+@import "~susy";
+
+$susy: (
+  columns: 12,
+  gutters: 1,
+  math: fluid,
+  gutter-position: inside,
+);
+
+//FONTS
+$font-family: "MontserratLight", sans-serif;
+$font-color-default: #000000;
+$font-color-contrast: #2D3241;
+$font-color-theme: #FF790D;
+
+$total-columns: 12;             // a 12-column grid
+$column-width: 4em;          // each column is 4em wide
+$gutter-width: 1em;            // 1em gutters between columns
+$grid-padding: $gutter-width;  // grid-padding equal to gutters
+
+$font-semibold: "MontserratSemibold";
+$font-bold: "MontserratBold";
+$font-ultralight: "MontserratUltraLight";
+$font-light: "MontserratLight";
+
+
+//GRID 
+$container-brake: 1440px;
+$xl-brake: 1600px;
+$lg-brake: 1200px;
+$md-brake: 991px;
+$sm-brake: 767px;

@@ -1,0 +1,125 @@
+body {
+	background-color: #f4f4f4;
+}
+
+.container-fluid {
+	padding: 0;
+}
+nav {
+	background-color: #f4f4f4;
+    border: 1px solid #aaaaaa;
+}
+nav h3 {
+	color: #66656a;
+	text-align: center;
+}
+.left-padding {
+	padding-left: 60px;
+}
+
+/* Sloupec */
+
+.task-col {
+	position: relative;
+	width: 90%;
+	min-height: 200px;
+	background-color: #f4f4f4;
+	margin-top: 50px;
+	padding: 12px 0 12px 14px;
+}
+.task-col h4 {
+	padding: 8px 0;
+}
+.task-col .tag-col {
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 35px;
+	width: 40px;
+	background-color: #f4f4f4;
+	border-left: 1px solid #e4e4e4;
+	margin-right: -40px;
+	text-align: center;
+	cursor: pointer;
+}
+.task-col .tag-col .glyphicon {
+	color: #9e9e9e;
+	font-size: 1.5em;
+	padding-top: 6px;
+}
+.task-col .tag-project {
+	position: absolute;
+	right: 0;
+	top: 35px;
+	height: 35px;
+	width: 40px;
+	background-color: #289cff;
+	margin-right: -40px;
+	text-align: center;
+}
+.task-col .tag-project .glyphicon {
+	color: #fff;
+	font-size: 1.5em;
+	padding-top: 6px;
+}
+
+/* Sloupec - karty (poznámky) */
+
+.task-col textarea {
+	display: inline-block;
+	width: 85%;
+	min-height: 75px;
+}
+.task-col .card-inner {
+	background: white;
+	min-height: 80px;
+	width: 85%;
+	height: auto;
+	display: inline-block;
+	padding: 8px 7px;
+	color: #a7a7a7;
+	margin-bottom: 2em;
+}
+.task-col .card-inner p {
+	max-width: 100%;
+	word-wrap: break-word;
+}
+.task-col .card .user-actions {
+	width: 22px;
+	display: inline-block;
+	vertical-align: top;	
+	min-height: 75px;
+}
+.task-col .card .remove {
+	padding-left: 4px;
+	width: 22px;
+	vertical-align: top;
+	cursor: pointer;
+}
+.task-col .card .edit {
+	padding-left: 4px;
+	display: block;
+	width: 22px;
+	padding-top: 40px;
+}
+
+/* Přidávání sloupce */
+
+.add-col {
+	margin-top: 50px;
+	background-color: #f4f4f4;
+    padding: 12px 14px 12px 14px;
+}
+.add-col textarea {
+	width: 100%;
+	resize: none;
+}
+.add-col h4 {
+    padding: 8px 0;
+}
+
+/* ng stuff */ 
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none;
+}
